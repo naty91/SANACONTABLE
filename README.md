@@ -32,3 +32,12 @@ Aplicación Streamlit para importar uno o varios estados de cuenta Excel del mis
 ## Formato esperado
 
 Encabezados en alguna de las primeras 50 filas: `FECHA`, `REFERENCIA`, `DESCRIPCION`, `+/-`, `VALOR`, `SALDO CONTABLE` y opcional `tipo`. Fechas como `04/21/2026 02:28:00 PM`. Los archivos pueden incluir metadatos del banco antes de la tabla y hojas auxiliares.
+
+## Extensión: balances anuales, referencia Contífico y SRI
+
+- Se añadió un cuadro de cuentas NIIF/SCVS orientativo y reportes de situación financiera y estado de resultados con presentación resumida al estilo de los reportes habituales de Contífico. **No es un clon de Contífico ni emplea su catálogo privado**. Homologar las cuentas con el plan oficial vigente de la compañía antes de reportar.
+- Para balances completos se requiere importar todo el año, saldos iniciales y asientos de ajustes. El módulo permite añadir apertura y ajustes con control básico de partida doble. Actualmente los asientos propuestos parten del extracto bancario y deben validarse y complementarse.
+- Para 104/103 se habilitó descarga de plantilla de comprobantes, carga de varios Excel y borradores mensuales agrupados. Tipo debe ser `compra` o `venta`. Las bases, IVA, IVA retenido, código IR y monto IR deben capturarse desde comprobantes válidos.
+- **IMPORTANTE:** los reportes 103/104 solo son papeles de trabajo, NO declaraciones presentables ni archivos XML/JSON oficiales homologados y NO calculan créditos tributarios, tarifas legales por fecha, retenciones procedentes, liquidación final, multas/intereses ni todos los casilleros. Antes de presentar, conciliar con compras, ventas, ATS, comprobantes electrónicos y versión vigente de guías del SRI: https://www.sri.gob.ec/web/intersri/formularios-e-instructivos
+- Saldos iniciales deben corresponder al comienzo del ejercicio y estar equilibrados. El Estado de Situación Financiera y el Estado de Resultados son **provisionales**; no reemplazan cierres NIIF, estado de flujo de efectivo, cambios en patrimonio, notas, conciliaciones ni validaciones societarias.
+- Validar que el filtro bancario sea `Anual` y su año coincida antes de descargar reportes anuales. Adjuntar facturas y documentos adicionales si se desea contabilidad integral.
